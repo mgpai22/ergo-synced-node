@@ -161,7 +161,7 @@ To edit the `ergo.conf` file after everything is setup:
 - `docker-compose up -d`
 
 To reset the container:
-- `docker-compose rm -y`
+- `docker-compose rm`
 - This deletes the created containers which consequently deletes the blocks synced by your node and any initialized wallets!  
 - This could be useful if one wanted to quickly reset their node wallet
 - To create the container again : `docker-compose up -d`
