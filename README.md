@@ -157,7 +157,7 @@ To edit the `ergo.conf` file after everything is setup:
 - `nano ergo.conf`
 - edit as necessary
 - `ctrl + o and ctrl + x` to save and exit 
--  `docker-compose down`
+-  `docker-compose stop`
 - `docker-compose up -d`
 
 To reset the container:
