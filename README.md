@@ -29,8 +29,7 @@ This will take a while download. No extra software to downloaded torrent files a
 Defaults:
 ```
 localhost:9053 --This is the web address to the ergo node 
-localhost:4551 --This is the web address to the ngrok panel
-API Key: Hello --This is the api key to unlock the ergo node in the web panel
+API Key: hello --This is the api key to unlock the ergo node in the web panel
 ```
 ### ergo-node setup
 ```
