@@ -1,0 +1,15 @@
+version: '3'
+services:
+  ergo-synced-node:
+    container_name: node
+    image: bellsoft/liberica-openjdk-alpine
+    restart: unless-stopped
+    volumes:      
+      - ./.ergo:/ergo/.ergo
+      - ./ergo.conf:/app/ergo.conf
+      - ./ergo-4.0.23.jar:/app/ergo.jar
+    ports:
+      - 9053:9053
+      - 9030:9030
+    working_dir: /app
+    command: java -jar -Xmx6G ergo.jar --mainnet -c ergo.conf
