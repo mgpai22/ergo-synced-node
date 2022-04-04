@@ -56,7 +56,7 @@ git clone https://github.com/mgpai22/ergo-synced-node
 ```
 - Do this only if you haven't already
 ```
-cd ergo-synced-node && rm -rf ergo-node && rm -rf .git cd ergo-testnet-node
+cd ergo-synced-node && rm -rf ergo-node && rm -rf .git && cd ergo-testnet-node
 ```
 - Do this only if you want to get rid of the mainnet node files
 ```
