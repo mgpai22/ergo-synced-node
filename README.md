@@ -15,11 +15,8 @@ people to support the network.
 Docker and docker compose must be installed. This node program should work on both [Windows](https://docs.docker.com/desktop/windows/install/) \
 and [Linux](https://docs.docker.com/engine/install/).
 
-<<<<<<< HEAD
 Python3 must be installed on Linux. The script will not do this. It only installs pip3 if not already present.
-=======
 The script will install docker automatically on Ubuntu.
->>>>>>> d9875c055888f71bda68b7df31ed694fcef3b254
 
 The computer should have about 30 GB of space available.
 ## Setup
