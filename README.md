@@ -15,6 +15,8 @@ people to support the network.
 Docker and docker compose must be installed. This node program should work on both [Windows](https://docs.docker.com/desktop/windows/install/) \
 and [Linux](https://docs.docker.com/engine/install/).
 
+Python3 must be installed on Linux. The script will not do this. It only installs pip3 if not already present.
+
 The computer should have about 30 GB of space available.
 ## Setup
 
@@ -83,6 +85,9 @@ Once setup is complete, the docker container can be left alone. The node can be 
 The config file can be edited while the node is running
 - Edit as normal and save
 - `docker compose up --force-recreate -d`
+
+Due to the node getting stuck on blocks, in the config there are now known peers set. The node will connect only to \
+peers that are synced and healthy. To refresh this peer list run `./updatePeerList.sh` in the respective directory. 
 
 The node instance  can be removed with `docker-compose down` this will NOT delete the blockchain \
 files.
