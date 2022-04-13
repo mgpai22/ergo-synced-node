@@ -1,9 +1,16 @@
-#!/bin/bash
 sudo apt-get update && sudo apt install p7zip-full -y
-wget -O ergo.7z https://pixeldrain.com/api/file/c58SY9Gh?download
+wget -O ergo.7z https://pixeldrain.com/api/file/Hv3tFN4E?download
 7z x ergo.7z
 rm ergo.7z
 wget https://github.com/ergoplatform/ergo/releases/download/v4.0.23/ergo-4.0.23.jar
+sudo apt update
+sudo apt install python3-pip -y
+pip3 install -r python-conf/requirements.txt
+cd python-conf
+python3 main.py
+cd ..
+cp python-conf/ergo.conf ergo.conf
+chmod +x updatePeerList.sh
 # These commands install docker and docker-compose for Ubuntu
 sudo apt update
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
