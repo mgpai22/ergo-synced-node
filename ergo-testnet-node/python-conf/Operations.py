@@ -7,7 +7,7 @@ def writeToConf(peerList):
             '    wallet.secretStorage.secretDir = ${ergo.directory}"/wallet/keystore"', '}', 'scorex {',
             '    restApi {',
             '        apiKeyHash = "324dcf027dd4a30a932c441f365a25e86b173defa4b8e58948253471b81b72cf"', '}',
-            'network {', '    knownPeers = ' + str(json.dumps(peerList)), '    maxConnections = ' + str(len(peerList)),
+            'network {', '    peerDiscovery = false', '    knownPeers = ' + str(json.dumps(peerList)), '    maxConnections = ' + str(len(peerList)),
             '}', '}']
     with open('ergo.conf', 'w') as conf:
         for line in data:

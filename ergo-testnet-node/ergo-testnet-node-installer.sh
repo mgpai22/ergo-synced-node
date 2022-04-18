@@ -1,8 +1,8 @@
 sudo apt-get update && sudo apt install p7zip-full -y
-wget -O ergo.7z https://pixeldrain.com/api/file/Hv3tFN4E?download
+wget -O ergo.7z https://pixeldrain.com/api/file/uDX3VhAy?download
 7z x ergo.7z
 rm ergo.7z
-wget https://github.com/ergoplatform/ergo/releases/download/v4.0.23/ergo-4.0.23.jar
+wget https://github.com/ergoplatform/ergo/releases/download/rc1/ergo-eip27-1.jar
 sudo apt update
 sudo apt install python3-pip -y
 pip3 install -r python-conf/requirements.txt

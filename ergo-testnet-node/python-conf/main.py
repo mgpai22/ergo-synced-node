@@ -2,7 +2,7 @@ import json
 import port
 import Operations
 
-nodeList = ["72.82.0.222:9052", "176.9.15.237:9052", "213.239.193.208:9052", "195.201.82.115:9052"]
+nodeList = ["213.239.193.208:9052", "176.9.15.237:9052"]
 
 Operations.clear('data.json')
 
@@ -18,7 +18,7 @@ dataList = []
 for i in range(len(Operations.file('data.json'))):  # writes all synced and open peers to a list
     data = Operations.file('data.json')[i]
     for x in range(len(data)):
-        if data[x]['address'] != 'N/A' and (data[x]['status'] == 'Equal' or 'Older') and data[x]['height'] > 200000:
+        if data[x]['address'] != 'N/A' and (data[x]['status'] == 'Equal' or 'Older') and data[x]['height'] > 206000:
             dataList.append(data[x]['address'][1:])
 
 peerList = []
