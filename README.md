@@ -53,6 +53,7 @@ nano ergo.conf
 - Edit the config file as necessary
   - Defaults are fine
   - Make sure to save the file in nano with `ctrl + o ` then exit with `ctrl + x`
+  - After editing do this `docker compose up --force-recreate -d` to make sure the changes load
   - Warning, if run before the installer script, then the ergo.conf will be overwritten
 
 ### ergo-testnet-node setup
@@ -77,6 +78,7 @@ nano ergo.conf
 - Edit the config file as necessary
   - Defaults are fine
   - Make sure to save the file in nano with `ctrl + o ` then exit with `ctrl + x`
+  - After editing do this `docker compose up --force-recreate -d` to make sure the changes load
   - Warning, if run before the installer script, then the ergo.conf will be overwritten
 
 ## Usage
