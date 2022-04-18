@@ -3,7 +3,7 @@ import requests
 
 
 def writeToConf(peerList):
-    data = ['ergo {', '    directory = "/ergo/.ergo"', '    node {mining = true}',
+    data = ['ergo {', '    directory = "/ergo/.ergo"', '    node {mining = false}',
             '    wallet.secretStorage.secretDir = ${ergo.directory}"/wallet/keystore"', '}', 'scorex {',
             '    restApi {',
             '        apiKeyHash = "324dcf027dd4a30a932c441f365a25e86b173defa4b8e58948253471b81b72cf"', '}',
