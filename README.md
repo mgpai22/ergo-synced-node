@@ -8,8 +8,7 @@ people to support the network.
  This will drastically reduce sync time and consequently eliminate most crashes.
 
  This program is neatly organized into a docker container to spin up a complete node in under an \
- hour. Furthermore, to provide easy access, ngrok is included which allows a direct tunnel (essentially a url) to the
- access the node from anywhere.
+ hour.
 ## Prerequisites
 
 Docker and docker compose must be installed. This node program should work on both [Windows](https://docs.docker.com/desktop/windows/install/) \
