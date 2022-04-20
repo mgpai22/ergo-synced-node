@@ -4,7 +4,7 @@ import requests
 
 def writeToConf(peerList):
     data = ['ergo {', '    directory = "/ergo/.ergo"', '    node {mining = false}',
-            '    wallet.secretStorage.secretDir = ${ergo.directory}"/wallet/keystore"', '    wallet {checkEIP27 = true}' '}', 'scorex {',
+            '    wallet.secretStorage.secretDir = ${ergo.directory}"/wallet/keystore"', '    wallet {checkEIP27 = true}', '}', 'scorex {',
             '    restApi {',
             '        apiKeyHash = "324dcf027dd4a30a932c441f365a25e86b173defa4b8e58948253471b81b72cf"', '}',
             'network {', '    peerDiscovery = false', '    knownPeers = ' + str(json.dumps(peerList)), '    maxConnections = ' + str(len(peerList)),
