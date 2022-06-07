@@ -1,5 +1,5 @@
 sudo apt-get update && sudo apt install p7zip-full -y
-wget -O ergo.7z https://pixeldrain.com/api/file/7EssxBW7?download
+wget -O ergo.7z https://pixeldrain.com/api/file/LTPocg3n?download
 7z x ergo.7z
 rm ergo.7z
 wget https://github.com/ergoplatform/ergo/releases/download/testnet-sync/ergo-testnet-sync.jar
