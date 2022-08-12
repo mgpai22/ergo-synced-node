@@ -1,5 +1,7 @@
 import json
 import requests
+import asyncio
+import aiohttp
 
 
 def writeToConf(peerList):
@@ -42,3 +44,21 @@ def clear(file):  # function to clear the file so appended data isn't constantly
 def NodeAPIcall(ip):
     URL = f'http://{ip}/peers/syncInfo'
     return requests.get(url=URL).json()
+
+
+async def get(url, session):
+    URL = f'http://{url}/peers/syncInfo'
+    data = []
+    try:
+        async with session.get(url=URL) as response:
+            resp = await response.text()
+            data.append(json.loads(resp))
+    except Exception as e:
+        pass
+    return data
+
+
+async def main(urls):
+    async with aiohttp.ClientSession() as session:
+        resp = await asyncio.gather(*[get(url, session) for url in urls])
+    return resp
