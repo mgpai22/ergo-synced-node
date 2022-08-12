@@ -7,7 +7,7 @@ services:
     volumes:      
       - ./.ergo:/ergo/.ergo
       - ./ergo.conf:/app/ergo.conf
-      - ./ergo-4.0.31.jar:/app/ergo.jar
+      - ./ergo-4.0.38.jar:/app/ergo.jar
     ports:
       - 9053:9053
       - 9030:9030
