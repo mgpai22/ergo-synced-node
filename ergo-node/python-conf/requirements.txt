@@ -1,5 +1,3 @@
-certifi
-charset-normalizer
-idna
+aiohttp
+asyncio
 requests
-urllib3
