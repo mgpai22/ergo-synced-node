@@ -4,7 +4,7 @@ There have been several issues with running a node on this blockchain. Most nota
  program crashes several times during the initial sync. This makes it frustrating for most \
 people to support the network.
 
- To mitigate this problem I have taken the liberty to take a snapshot of about 700,000 blocks. \
+ To mitigate this problem I have taken the liberty to take a snapshot of about 800,000 blocks. \
  This will drastically reduce sync time and consequently eliminate most crashes.
 
  This program is neatly organized into a docker container to spin up a complete node in under an \
