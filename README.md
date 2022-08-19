@@ -91,12 +91,12 @@ Once setup is complete, the docker container can be left alone. The node can be 
 
 The config file can be edited while the node is running
 - Edit as normal and save
-- `docker compose up --force-recreate -d`
+- `docker-compose up --force-recreate -d`
 
 Due to the node getting stuck on blocks, in the config there are now known peers set. The node will connect only to \
-peers that are synced and healthy. To refresh this peer list run `./updatePeerList.sh` in the respective directory. 
+peers that are synced and healthy. To refresh this peer list run `./updatePeerList.sh` in the respective directory.  Then enter `docker-compose up --force-recreate -d` to start up the node.
 
-The node instance  can be removed with `docker-compose down` this will NOT delete the blockchain \
+The node instance can be removed with `docker-compose down` this will NOT delete the blockchain \
 files.
 
 ## Roadmap
