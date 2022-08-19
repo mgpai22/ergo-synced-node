@@ -17,7 +17,9 @@ and [Linux](https://docs.docker.com/engine/install/).
 Python3 must be installed on Linux. The script will not do this. It only installs pip3 if not already present.
 The script will also install docker automatically on Ubuntu.
 
-The computer should have about 30 GB of space available.
+The computer should have about 30 GB of space and 6 GB of RAM.
+
+RAM may be able to be customized if you edit the `-Xmx6G` flag in `docker-compose.yml`
 ## Setup
 
 There are several files included in this repository.
