@@ -5,4 +5,3 @@ cd python-conf
 python3 main.py
 cd ..
 cp python-conf/ergo.conf ergo.conf
-docker compose up --force-recreate -d
