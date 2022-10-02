@@ -39,7 +39,7 @@ API Key: hello --This is the api key to unlock the ergo node in the web panel
 git clone https://github.com/mgpai22/ergo-synced-node
 ```
 ```
-cd ergo-synced-node && rm -rf ergo-node-testnet && rm -rf .git && cd ergo-node
+cd ergo-synced-node
 ```
 ```
 chmod +x ergo-node-installer.sh
@@ -55,32 +55,6 @@ nano ergo.conf
   - Make sure to save the file in nano with `ctrl + o ` then exit with `ctrl + x`
   - After editing do this `docker compose up --force-recreate -d` to make sure the changes load
   - Warning, if run before the installer script, then the ergo.conf will be overwritten
-
-### ergo-testnet-node setup
-```
-git clone https://github.com/mgpai22/ergo-synced-node
-```
-- Do this only if you haven't already
-```
-cd ergo-synced-node && rm -rf ergo-node && rm -rf .git && cd ergo-testnet-node
-```
-- Do this only if you want to get rid of the mainnet node files
-
-```
-chmod +x ergo-testnet-node-installer.sh
-```
-```
-./ergo-testnet-node-installer.sh
-```
-```
-nano ergo.conf
-```
-- Edit the config file as necessary
-  - Defaults are fine
-  - Make sure to save the file in nano with `ctrl + o ` then exit with `ctrl + x`
-  - After editing do this `docker compose up --force-recreate -d` to make sure the changes load
-  - Warning, if run before the installer script, then the ergo.conf will be overwritten
-
 ## Usage
 
 The setup process should take under an hour. This is depending on the download and extraction \
