@@ -1,0 +1,9 @@
+version: '3'
+services:
+  ergo-synced-node:
+    container_name: blockchain_download
+    image: node
+    volumes:      
+      - ../.ergo:/app
+    working_dir: /app
+    command: bash -c "npm install -g ardrive-cli && ardrive download-folder -f '333e2398-37ca-4325-b27f-87063e525abd'"

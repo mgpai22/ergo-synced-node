@@ -1,0 +1,9 @@
+version: '3'
+services:
+  ergo-synced-node:
+    container_name: python-tool
+    image: python
+    volumes:      
+      - ./.:/app
+    working_dir: /app
+    command: bash -c "pip3 install -r requirements.txt && python3 main.py"

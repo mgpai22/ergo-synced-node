@@ -1,7 +1,9 @@
 sudo apt update
-sudo apt install python3-pip -y
-pip3 install -r python-conf/requirements.txt
 cd python-conf
-python3 main.py
+docker-compose up 
 cd ..
 cp python-conf/ergo.conf ergo.conf
+docker-compose down
+echo node shutdown to load changes
+docker-compose up --build -d
+echo The node is back up! Changes are loaded.
