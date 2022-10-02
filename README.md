@@ -39,7 +39,7 @@ API Key: hello --This is the api key to unlock the ergo node in the web panel
 git clone https://github.com/mgpai22/ergo-synced-node
 ```
 ```
-cd ergo-synced-node
+cd ergo-synced-node/ergo-node
 ```
 ```
 chmod +x ergo-node-installer.sh
