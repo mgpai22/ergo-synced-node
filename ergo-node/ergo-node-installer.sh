@@ -9,7 +9,7 @@ cat .ergo/blockchain_parts/ergo-mainnet-blockchain.tar.gz.parta* >blockchain.tar
 rm -rf .ergo
 tar -xvf blockchain.tar.gz
 rm blockchain.tar.gz
-wget https://github.com/ergoplatform/ergo/releases/download/v4.0.103/ergo-4.0.103.jar
+wget https://github.com/ergoplatform/ergo/releases/download/v5.0.6/ergo-5.0.6.jar
 chmod +x updatePeerList.sh
 sudo apt update
 cd python-conf
