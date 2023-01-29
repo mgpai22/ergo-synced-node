@@ -1,8 +1,6 @@
 # Ergo Synced Node
 
-There have been several issues with running a node on this blockchain. Most notably the node \
- program crashes several times during the initial sync. This makes it frustrating for most \
-people to support the network.
+Running a node from initial sync can take a long time, espically on older or low power devices. 
 
  To mitigate this problem I have taken the liberty to take a snapshot of about 840,000 blocks. \
  This will drastically reduce sync time and consequently eliminate most crashes.
