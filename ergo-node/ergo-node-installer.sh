@@ -2,20 +2,13 @@
 
 set -e # exit if anything fails
 
-if ! command -v curl &> /dev/null # check if curl is installed
-then
-    echo "curl not installed"
-    exit
-fi
+which curl &> /dev/null || sudo apt install curl # install curl if needed
 
-curl -fsSL https://raw.githubusercontent.com/mgpai22/docker-install-script/main/docker-install-ubuntu.sh | bash
-./docker-install-ubuntu.sh # installs docker only if system doesn't have it
-rm docker-install-ubuntu.sh
+curl -fsSL https://raw.githubusercontent.com/mgpai22/docker-install-script/main/docker-install-ubuntu.sh | bash # installs docker if it isn't already there
 
-if ! command -v docker &> /dev/null # check if docker installed
-then
-    echo "Docker could not be installed"
-    exit
+if ! [ -x "$(command -v docker)" ]; then
+    echo docker not installed # exit if docker not installed
+    exit 1
 fi
 
 ERGO_REF_CLIENT_VERSION="v5.0.12"
@@ -24,6 +17,7 @@ curl -O https://storage.googleapis.com/ergo_bucket_archive/ergo-full-node-data.7
 
 sudo apt-get install p7zip-full -y # install 7-zip utility
 7z x ergo-full-node-data.7z #extract directory
+rm ergo-full-node-data.7z # delete archive
 
 curl -O https://github.com/ergoplatform/ergo/releases/download/${ERGO_REF_CLIENT_VERSION}/ergo-${ERGO_REF_CLIENT_VERSION}.jar # download reference client jar
 
