@@ -19,7 +19,7 @@ sudo apt-get install p7zip-full -y # install 7-zip utility
 7z x ergo-full-node-data.7z #extract directory
 rm ergo-full-node-data.7z # delete archive
 
-curl -O https://github.com/ergoplatform/ergo/releases/download/v${ERGO_REF_CLIENT_VERSION}/ergo-${ERGO_REF_CLIENT_VERSION}.jar # download reference client jar
+curl -LO https://github.com/ergoplatform/ergo/releases/download/v${ERGO_REF_CLIENT_VERSION}/ergo-${ERGO_REF_CLIENT_VERSION}.jar # download reference client jar
 
 chmod +x updatePeerList.sh
 sudo apt update
