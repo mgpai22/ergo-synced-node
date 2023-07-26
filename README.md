@@ -2,36 +2,25 @@
 
 Running a node from initial sync can take a long time, espically on older or low power devices. 
 
- To mitigate this problem I have taken the liberty to take a snapshot of about 840,000 blocks. \
- This will drastically reduce sync time and consequently eliminate most crashes.
+ To mitigate this problem I have taken the liberty to take a snapshot of about 1,054,000 blocks. \
+ This will drastically reduce sync time.
 
- This program is neatly organized into a docker container to spin up a complete node in under 30 min.
+ This program is neatly organized into a docker container to spin up a complete node in around 30 min.
 ## Prerequisites
 
-Docker and docker compose must be installed. This node program should work on both [Windows](https://docs.docker.com/desktop/windows/install/) \
-and [Linux](https://docs.docker.com/engine/install/).
+Although the script tries to install docker for any linux distro, its best of docker and the docker compose plug-in are already installed.
 
-Python3 must be installed on Linux. The script will not do this. It only installs pip3 if not already present.
-The script will also install docker automatically on Ubuntu.
-
-The computer should have about 30 GB of space and 6 GB of RAM.
+The node currently takes about 25 GiBs of storage. It is best for your host system of have a minimum 50 GiBs free and 6 GiBs of RAM available. 
 
 RAM may be able to be customized if you edit the `-Xmx6G` flag in `docker-compose.yml`
 ## Setup
-
-There are several files included in this repository.
-
-The torrent folder includes the snapshot that will be downloaded via the torrent protocol. \
-This is the most efficient method to obtain the snapshot. Seeding is disabled by default.
-
-The centralized folder includes the snapshot that will be downloaded via a server. \
-This will take a while download. No extra software to downloaded torrent files are included.
 
 Defaults:
 ```
 localhost:9053 --This is the web address to the ergo node
 API Key: hello --This is the api key to unlock the ergo node in the web panel
 ```
+Change the hash in [ergo.conf](ergo-node/ergo.conf) and [python-conf/ergo.conf](ergo-node/python-conf/ergo.conf) to change the API Key
 ### ergo-node setup
 ```
 git clone https://github.com/mgpai22/ergo-synced-node
@@ -52,10 +41,10 @@ nano ergo.conf
   - Defaults are fine
   - Make sure to save the file in nano with `ctrl + o ` then exit with `ctrl + x`
   - After editing do this `docker compose up --force-recreate -d` to make sure the changes load
-  - Warning, if run before the installer script, then the ergo.conf will be overwritten
+  - Warning, if run before the installer script, as ergo.conf will be overwritten
 ## Usage
 
-The setup process should take under an hour. This is depending on the download and extraction \
+The setup process should take under 30 min. This is depending on the download and extraction \
 speed. The extraction process itself takes around 10 to 15 minutes.
 
 `localhost:9053` will open up the webpage directly to the node.
@@ -66,8 +55,7 @@ The config file can be edited while the node is running
 - Edit as normal and save
 - `docker-compose up --force-recreate -d`
 
-Due to the node getting stuck on blocks, in the config there are now known peers set. The node will connect only to \
-peers that are synced and healthy. To refresh this peer list run `./updatePeerList.sh` in the respective directory.  Then enter `docker-compose up --force-recreate -d` to start up the node.
+The node will connect only to peers that are synced and healthy. To refresh this peer list run `./updatePeerList.sh` in the respective directory.  Then enter `docker-compose up --force-recreate -d` to start up the node.
 
 The node instance can be removed with `docker-compose down` this will NOT delete the blockchain \
 files.
