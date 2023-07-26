@@ -1,5 +1,7 @@
 # Ergo Synced Node
 
+[Direct Blockchain Archive Download Link](https://storage.googleapis.com/ergo_bucket_archive/ergo-full-node-data.7z)
+
 Running a node from initial sync can take a long time, espically on older or low power devices. 
 
  To mitigate this problem I have taken the liberty to take a snapshot of about 1,054,000 blocks. \
