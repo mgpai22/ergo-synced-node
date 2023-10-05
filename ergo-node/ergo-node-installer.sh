@@ -11,7 +11,7 @@ if ! [ -x "$(command -v docker)" ]; then
     exit 1
 fi
 
-ERGO_REF_CLIENT_VERSION="5.0.12"
+ERGO_REF_CLIENT_VERSION="5.0.14"
 
 curl -O https://storage.googleapis.com/ergo_bucket_archive/ergo-full-node-data.7z # download archived blockchain data
 
