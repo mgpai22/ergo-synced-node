@@ -7,9 +7,9 @@ services:
     volumes:      
       - ./.ergo:/ergo/.ergo
       - ./ergo.conf:/app/ergo.conf
-      - ./ergo-5.0.12.jar:/app/ergo.jar
+      - ./ergo-5.0.14.jar:/app/ergo.jar
     ports:
       - "9053:9053"
       - "9030:9030"
     working_dir: /app
-    command: java -jar -Xmx6G ergo.jar --mainnet -c ergo.conf
+    command: java -jar -Xmx2G ergo.jar --mainnet -c ergo.conf
