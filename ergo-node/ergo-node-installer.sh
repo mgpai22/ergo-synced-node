@@ -4,7 +4,14 @@ set -e # exit if anything fails
 
 which curl &> /dev/null || sudo apt install curl # install curl if needed
 
-curl -fsSL https://raw.githubusercontent.com/mgpai22/docker-install-script/main/docker-install-ubuntu.sh | bash # installs docker if it isn't already there
+# Download Docker installation script
+curl -fsSL https://get.docker.com -o install-docker.sh 
+
+# Run the Docker installation script
+sudo sh install-docker.sh
+
+# install docker compose
+sudo apt install docker-compose -y
 
 if ! [ -x "$(command -v docker)" ]; then
     echo docker not installed # exit if docker not installed
