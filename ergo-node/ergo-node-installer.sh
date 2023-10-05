@@ -4,18 +4,21 @@ set -e # exit if anything fails
 
 which curl &> /dev/null || sudo apt install curl # install curl if needed
 
-# Download Docker installation script
-curl -fsSL https://get.docker.com -o install-docker.sh 
-
-# Run the Docker installation script
-sudo sh install-docker.sh
-
-# install docker compose
-sudo apt install docker-compose -y
-
+# Check if Docker is not installed
 if ! [ -x "$(command -v docker)" ]; then
-    echo docker not installed # exit if docker not installed
-    exit 1
+    # Download Docker installation script
+    curl -fsSL https://get.docker.com -o install-docker.sh 
+
+    # Run the Docker installation script
+    sudo sh install-docker.sh
+
+    # install docker compose
+    sudo apt install docker-compose -y
+
+    if ! [ -x "$(command -v docker)" ]; then
+        echo docker not installed # exit if docker not installed
+        exit 1
+    fi
 fi
 
 ERGO_REF_CLIENT_VERSION="5.0.14"
