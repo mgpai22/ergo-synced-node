@@ -2,7 +2,7 @@
 
 set -e # exit if anything fails
 
-which curl &> /dev/null || sudo apt install curl # install curl if needed
+which curl &> /dev/null || sudo DEBIAN_FRONTEND=noninteractive apt-get install -y curl # install curl if needed
 
 # Check if Docker is not installed
 if ! [ -x "$(command -v docker)" ]; then
@@ -13,7 +13,7 @@ if ! [ -x "$(command -v docker)" ]; then
     sudo sh install-docker.sh
 
     # install docker compose
-    sudo apt install docker-compose -y
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install docker-compose -y
 
     if ! [ -x "$(command -v docker)" ]; then
         echo docker not installed # exit if docker not installed
@@ -25,7 +25,7 @@ ERGO_REF_CLIENT_VERSION="5.0.14"
 
 curl -O https://storage.googleapis.com/ergo_bucket_archive/ergo-full-node-data.7z # download archived blockchain data
 
-sudo apt-get install p7zip-full -y # install 7-zip utility
+sudo DEBIAN_FRONTEND=noninteractive apt-get install p7zip-full -y # install 7-zip utility
 7z x ergo-full-node-data.7z #extract directory
 rm ergo-full-node-data.7z # delete archive
 
