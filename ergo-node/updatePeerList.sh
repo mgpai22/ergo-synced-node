@@ -1,3 +1,4 @@
+#!/bin/bash
 cd python-conf
 docker compose up ergo-node-peer-python-tool
 cd ..
