@@ -16,6 +16,13 @@ def writeToConf(peerList: List[str], conf_file: str) -> None:
     with open('ergo.conf', 'w') as f:
         f.write(conf_string)
 
+def write_declared_address(ip_address: str, conf_file: str) -> None:
+    conf = ConfigFactory.parse_file(conf_file)
+    conf.put('scorex.network.declaredAddress', ip_address)
+    conf_string = HOCONConverter.to_hocon(conf)
+    with open('ergo.conf', 'w') as f:
+        f.write(conf_string)
+
 
 def write(new_data, filename: str) -> None:  # function that appends data to the specified file
     with open(filename, "r") as file1:
