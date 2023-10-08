@@ -23,7 +23,19 @@ def write_declared_address(ip_address: str, conf_file: str) -> None:
     with open('ergo.conf', 'w') as f:
         f.write(conf_string)
 
+def write_api_key_hash(api_key_hash: str, conf_file: str) -> None:
+    conf = ConfigFactory.parse_file(conf_file)
+    conf.put('scorex.restApi.apiKeyHash', api_key_hash)
+    conf_string = HOCONConverter.to_hocon(conf)
+    with open('ergo.conf', 'w') as f:
+        f.write(conf_string)
 
+def write_node_name(node_name: str, conf_file: str) -> None:
+    conf = ConfigFactory.parse_file(conf_file)
+    conf.put('scorex.network.nodeName', node_name)
+    conf_string = HOCONConverter.to_hocon(conf)
+    with open('ergo.conf', 'w') as f:
+        f.write(conf_string)
 def write(new_data, filename: str) -> None:  # function that appends data to the specified file
     with open(filename, "r") as file1:
         data = json.load(file1)

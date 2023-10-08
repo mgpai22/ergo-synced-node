@@ -14,3 +14,17 @@ services:
       - ./.:/app
     working_dir: /app
     command: bash -c "pip3 install -r requirements.txt && python3 declare_address.py"
+  ergo-node-api-hash-tool:
+    container_name: ergo-api-hash-updater
+    image: python:3.9
+    volumes:
+      - ./.:/app
+    working_dir: /app
+    command: bash -c "pip3 install -r requirements.txt && python3 change_api_key_hash.py $${API_HASH}"
+  ergo-node-name-tool:
+    container_name: ergo-name-updater
+    image: python:3.9
+    volumes:
+      - ./.:/app
+    working_dir: /app
+    command: bash -c "pip3 install -r requirements.txt && python3 change_node_name.py $${NODE_NAME}"
