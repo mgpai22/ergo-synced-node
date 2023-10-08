@@ -1,9 +1,16 @@
 version: '2'
 services:
-  ergo-synced-node:
-    container_name: python-tool
+  ergo-node-peer-python-tool:
+    container_name: ergo-peer-updater
     image: python
     volumes:      
       - ./.:/app
     working_dir: /app
     command: bash -c "pip3 install -r requirements.txt && python3 main.py"
+  ergo-node-ip-tool:
+    container_name: ergo-ip-updater
+    image: python
+    volumes:
+      - ./.:/app
+    working_dir: /app
+    command: bash -c "pip3 install -r requirements.txt && python3 declare_address.py"
